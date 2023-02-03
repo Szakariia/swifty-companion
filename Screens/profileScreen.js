@@ -45,7 +45,7 @@ export default function ProfileScreen({ navigation, route }) {
     projects_users: route.params.data.projects_users,
   };
   const profileImg = {
-    uri: data.Image_profile,
+    uri: route.params.data.image.link,
     width: 180,
     height: 180,
   };

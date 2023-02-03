@@ -15,9 +15,9 @@ const postAuth = async () => {
     const response = await axios.post(Auth_url, {
       grant_type: "client_credentials",
       client_id:
-        "2aab3ebd1fd3cd6583ffe7cccb5ff1284f0f7a8daec88853050d6b4471f1c446",
+        "u-s4t2ud-c25a45a0ef679e46ce27e2879d3061d301bff75102eefc1e1c9b396ca63f0b45",
       client_secret:
-        "706988c2a78494ba58f9a037d1004b9f9b2584204892f600d40c382b367c9769",
+        "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",
     });
     return response.data;
   } catch (error) {
@@ -58,7 +58,7 @@ const authExpiredChecker = async () => {
   const userAuth = await retrieveData();
   const toDayTime = Math.abs(new Date().getTime() / 1000);
   if (!userAuth) {
-    userAuth = await storeData();
+    //userAuth = await storeData();
   } else if (
     userAuth &&
     toDayTime >= userAuth.created_at + userAuth.expires_in
